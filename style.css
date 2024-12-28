@@ -1,0 +1,493 @@
+:root {
+  --primary-color: #6c5dd3;
+  --secondary-color: #a08ff5;
+  --bg-color: #f4f5fa;
+  --text-color: #333;
+  --white: #fff;
+  --border-color: #e0e0e0;
+  --card-bg: #6c5dd3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Add scroll if content overflows */
+    position: fixed; /* or sticky, depending on layout */
+    top: 0;
+    left: 0;
+    z-index: 100; /* Ensure it's above other content if needed */
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+    width: 30px;
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px;
+}
+
+.sidebar .logo span {
+    font-size: 1.25rem; /* Use rem for better scaling */
+    font-weight: bold;
+}
+
+.sidebar .menu-item {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .menu-item li {
+    margin-bottom: 0.5rem; /* Use rem for consistent spacing */
+}
+
+.sidebar .menu-item li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem; /* Use rem for padding */
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Add transition easing */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for long text */
+}
+
+.sidebar .menu-item li a:hover,
+.sidebar .menu-item li a.active {
+    background-color: #f0f0f0; /* Slightly lighter gray for hover */
+}
+
+.sidebar .menu-item li a .badge {
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 0.25rem 0.5rem; /* Use rem for padding */
+    font-size: 0.75rem; /* Use rem for font size */
+    margin-left: auto;
+    flex-shrink: 0; /* Prevent badge from shrinking */
+}
+
+.sidebar .menu-item li a .icon {
+    margin-right: 0.5rem; /* Use rem for consistent spacing */
+    width: 1.25rem; /* Set a fixed width for icons for consistent spacing */
+    height: 1.25rem; /* Set a fixed height for icons */
+    display: flex; /* Use flexbox for icon alignment */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Optional: Style the icons */
+.sidebar .menu-item li a .icon svg,
+.sidebar .menu-item li a .icon i { /* For Font Awesome or similar */
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    transform: translateX(-100%); /* Hide sidebar off-screen */
+    z-index: 99;
+  }
+
+  .main-content {
+    margin-left: 0; /* Reset content margin */
+}
+
+  /* Styles for when sidebar is open */
+  .sidebar.active {
+    transform: translateX(0); /* Show sidebar */
+  }
+
+  body.sidebar-open {
+    overflow: hidden; /* Prevent scrolling when sidebar is open */
+  }
+}
+
+.main-content {
+  margin-left: 250px; Adjust margin according to sidebar width
+  padding: 20px;
+  transition: margin-left 0.3s ease-in-out; /* Smooth transition for content */
+}
+
+.main-content .header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.main-content .header1 input {
+  padding: 10px;
+  width: -webkit-fill-available;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.container .up,
+.container .down {
+  display: flex;
+  margin: 5px;
+}
+
+.card {
+  background: var(--white);
+  margin: 2px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.analytics-card {
+  background: var(--card-bg);
+  color: var(--white);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+.analytics-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.analytics-card p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.analytics-card .stats {
+  display: grid;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.analytics-card .stat {
+  gap: 50px;
+}
+
+.analytics-card .stat h4 {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px;
+  border-radius: 8px;
+  text-align: center;
+  width: 50px;
+}
+
+.analytics-card .stat span {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.analytics-card .image-section {
+  width: 80px;
+  height: 80px;
+  background: url("https://via.placeholder.com/80") no-repeat center center /
+    cover;
+  border-radius: 50%;card
+}
+
+.spend {
+  margin: 30px 0 10px 0;
+}
+
+.up .right {
+  align-items: self-start;
+}
+.up .right .sales-card {
+  width: 50%;
+}
+.graph-container {
+    width: full; /* Adjust as needed */
+    height: 90px; /* Adjust as needed */
+    position: relative;
+    overflow: hidden; /* Hide overflowing parts of the curve */
+}
+.graph {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 128, 0, 0.2)); /* Gradient fill */
+    position: absolute; /* Needed for curve positioning */
+    bottom: 0; /* Align to the bottom */
+    clip-path: path("M 0 75 C 50 50, 100 25, 150 50 C 200 75, 250 125, 300 100 L 300 150 L 0 150 Z"); /* SVG Path for the curve */
+}
+/*Responsive behavior*/
+@media (max-width:400px){
+    .graph-container{
+        width: 200px;
+        height: 100px;
+    }
+    .graph{
+        clip-path: path("M 0 50 C 33.33 33.33, 66.66 16.66, 100 33.33 C 133.33 50, 166.66 83.33, 200 66.66 L 200 100 L 0 100 Z");
+    }
+}
+
+
+.sales-overview {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  position: relative;
+  width: 50%;
+}
+.sales-overview h2 {
+  margin: 0;
+  font-size: 1rem;
+  color: #888;
+}
+.sales-overview .total-sales {
+  font-size: 1.5rem;
+}
+.sales-overview .increase {
+  color: green;
+  font-size: 1em;
+}
+.sales-overview .details {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+.sales-overview .details div {
+  width: 45%;
+}
+.sales-overview .details div h3 {
+  margin: 0;
+  font-size: 1em;
+  color: #888;
+}
+.sales-overview .details div .percentage {
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+.sales-overview .details div .count {
+  color: #888;
+}
+.colorBar {
+  height: 10px;
+  background: linear-gradient(to right, #00bcd4 62.2%, #9c27b0 62.2%);
+  border-radius: 5px;
+}
+.sales-overview .line {
+  height: 70px;
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  border: 0.3px solid gray;
+}
+
+@media (max-width: 500px) {
+  .up .right {
+    font-size: 14px;
+    flex-direction: column;
+  }
+}
+
+.earning {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 50%;
+}
+.down .header {
+  font-size: 18px;
+  font-weight: bold;
+}
+.down .subheader {
+  color: #888;
+  font-size: 14px;
+}
+.earning .flex {
+  justify-content: center;
+  gap: 15px;
+}
+.total-earnings {
+  display: flex;
+  align-items: center;
+}
+.total-earnings span {
+  font-size: 25px;
+  font-weight: bold;
+}
+.percentage {
+  background-color: #e0f7e9;
+  color: #34a853;
+  border-radius: 5px;
+  padding: 2px 5px;
+  margin-left: 10px;
+  font-size: 14px;
+}
+.description {
+  color: #888;
+  font-size: 12px;
+}
+.chart-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  background-color: #fff;
+  padding: 20px;
+}
+.bar {
+  width: 20px;
+  background-color: #dcdcff;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  position: relative;
+}
+.bar::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #000;
+}
+.bar.friday {
+  background-color: #8a80ff;
+}
+.bar.mo {
+  height: 40px;
+}
+.bar.tu {
+  height: 60px;
+}
+.bar.we {
+  height: 50px;
+}
+.bar.th {
+  height: 45px;
+}
+.bar.fr {
+  height: 80px;
+}
+.bar.sa {
+  height: 55px;
+}
+.bar.su {
+  height: 55px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 2px;
+  margin-top: 15px;
+}
+.details div {
+  text-align: center;
+}
+.details .earnings .colorBar {
+  background: linear-gradient(to right, #8a4af3 62.2%, grey 62.2%);
+}
+.details .profit .colorBar {
+  background: linear-gradient(to right, #34a853 62.2%, grey 62.2%);
+}
+.details .expense .colorBar {
+  background: linear-gradient(to right, #ea4335 62.2%, grey 62.2%);
+}
+.details .colorBar {
+  height: 5px;
+  width: 100px;
+}
+
+.support-tracker {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 50%;
+  gap: 10px;
+  font-size: 1rem;
+}
+.support-tracker .statTickets {
+  margin-top: 25px;
+}
+.support-tracker .statTickets span {
+  font-size: 0.5em;
+}
+.support-tracker .stat {
+  margin: 10px 0;
+}
+.support-tracker .stat span {
+  display: block;
+  font-size: 0.8em;
+}
+.support-tracker .stat h6 {
+  color: gray;
+  font-size: 0.8em;
+}
+.progress-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(#4a90e2 0% 85%, #e0e0e0 85% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.progress-circle::before {
+  content: "";
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+}
+.progress-text {
+  position: absolute;
+  text-align: center;
+}
+.progress-text .percentage {
+  font-size: 2em;
+  font-weight: bold;
+}
+.progress-text .label {
+  font-size: 0.9em;
+  color: #888;
+}

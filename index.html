@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo"> <img src="logo.png" alt="Logo"> <span>Vuexy</span> </div>
+        <ul class="menu-item">
+            <li><a href="#" class="active"><span class="icon">📊</span> Dashboards <span class="badge">5</span></a></li>
+            <li><a href="#"><span class="icon">📈</span> Analytics</a></li>
+            <li><a href="#"><span class="icon">📋</span> CRM</a></li>
+            <li><a href="#"><span class="icon">🛒</span> eCommerce</a></li>
+            <li><a href="#"><span class="icon">🚚</span> Logistics</a></li>
+            <li><a href="#"><span class="icon">🎓</span> Academy</a></li>
+            <li><a href="#"><span class="icon">📄</span> Layouts</a></li>
+            <li><a href="#"><span class="icon">📄</span> Front Pages</a></li>
+        </ul>
+        <h3>APPS & PAGES</h3>
+        <ul class="menu-item">
+            <li><a href="#"><span class="icon">✉️</span> Email</a></li>
+            <li><a href="#"><span class="icon">💬</span> Chat</a></li>
+            <li><a href="#"><span class="icon">📅</span> Calendar</a></li>
+            <li><a href="#"><span class="icon">📊</span> Kanban</a></li>
+            <li><a href="#"><span class="icon">🛒</span> eCommerce</a></li>
+            <li><a href="#"><span class="icon">🎓</span> Academy</a></li>
+            <li><a href="#"><span class="icon">🚚</span> Logistics</a></li>
+            <li><a href="#"><span class="icon">📄</span> Invoice</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="header1">
+            <input type="text" placeholder="Search (Ctrl+/)">
+            <div class="profile">
+                <img src="https://via.placeholder.com/40" alt="Profile" style="border-radius: 50%;">
+            </div>
+        </div>
+        <div class="container">
+            <div class="up">
+                <div class="card analytics-card">
+                    <div class="text-section">
+                        <h3>Website Analytics</h3>
+                        <p>Total 28.5% Conversion Rate</p>
+
+                        <div class="spend">Spending</div>
+                        <div class="stats">
+                            <div class="stat flex">
+                                <div class="flex">
+                                    <h4>12h</h4>
+                                    <span>Spend</span>
+                                </div>
+                                <div class="flex">
+                                    <h4>18</h4>
+                                    <span>Order Size</span>
+                                </div>
+                            </div>
+                            <div class="stat flex">
+                                <div class="flex">
+                                    <h4>127</h4>
+                                    <span>Order</span>
+                                </div>
+                                <div class="flex">
+                                    <h4>2.3k</h4>
+                                    <span>Items</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-section"></div>
+                </div>
+
+                <div class="right flex">
+                    <div class="card sales-card">
+                        <h3>Average Daily Sales</h3>
+                        <h5>Total Sales This Month</h5>
+                        <p>$28,450</p>
+                        <div class="graph-container">
+                            <div class="graph"></div>
+                        </div>
+                    </div>
+
+                    <div class="card sales-overview">
+                        <div class="flex">
+                            <div>
+                                <h2>Sales Overview</h2>
+                                <div class="total-sales">$42.5k</div>
+                            </div>
+                            <div class="increase">+18.2%</div>
+                        </div>
+                        <div class="details">
+                            <div class="order">
+                                <h3>Order</h3>
+                                <div class="percentage">62.2%</div>
+                                <div class="count">6,440</div>
+                            </div>
+                            <div class="visits">
+                                <h3>Visits</h3>
+                                <div class="percentage">25.5%</div>
+                                <div class="count">12,749</div>
+                            </div>
+                        </div>
+                        <div class="colorBar"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="down">
+                <div class="card earning">
+                    <div class="header">Earning Reports</div>
+                    <div class="subheader">Weekly Earnings Overview</div>
+
+                    <div class="flex">
+                        <div>
+                            <div class="total-earnings">
+                                <span>$468</span>
+                                <div class="percentage">+4.2%</div>
+                            </div>
+                            <div class="description">You informed of this week compared to last week</div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="bar mo" data-label="Mo"></div>
+                            <div class="bar tu" data-label="Tu"></div>
+                            <div class="bar we" data-label="We"></div>
+                            <div class="bar th" data-label="Th"></div>
+                            <div class="bar fr friday" data-label="Fr"></div>
+                            <div class="bar sa" data-label="Sa"></div>
+                            <div class="bar su" data-label="Su"></div>
+                        </div>
+                    </div>
+
+                    <div class="details">
+                        <div class="earnings">
+                            <div>Earnings</div>
+                            <div>$545.69</div>
+                            <div class="colorBar"></div>
+                        </div>
+                        <div class="profit">
+                            <div>Profit</div>
+                            <div>$256.34</div>
+                            <div class="colorBar"></div>
+                        </div>
+                        <div class="expense">
+                            <div>Expense</div>
+                            <div>$74.19</div>
+                            <div class="colorBar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card support-tracker flex">
+                    <div>
+                        <div class="header">Support Tracker</div>
+                        <div class="subheader">Last 7 Days</div>
+                        <div class="statTickets">
+                            <h2>164</h2>
+                            <span>Total Tickets</span>
+                        </div>
+                        <div class="stat">
+                            <span>New Tickets</span>
+                            <h6>142</h6>
+                        </div>
+                        <div class="stat">
+                            <span>Open Tickets</span>
+                            <h6>28</h6>
+                        </div>
+                        <div class="stat">
+                            <span>Response Time</span>
+                            <h6>1 Day</h6>
+                        </div>
+                    </div>
+                    <div class="progress-circle">
+                        <div class="progress-text">
+                            <div class="label">Completed Task</div>
+                            <div class="percentage">85%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
