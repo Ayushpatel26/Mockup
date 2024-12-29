@@ -115,37 +115,18 @@ body {
     height: 100%;
 }
 
-@media screen and (max-width: 700px) {
-  .sidebar {
-    transform: translateX(-100%); /* Hide sidebar off-screen */
-    z-index: 99;
-  }
-
-  .main-content {
-    margin-left: 0; /* Reset content margin */
-}
-
-  /* Styles for when sidebar is open */
-  .sidebar.active {
-    transform: translateX(0); /* Show sidebar */
-  }
-
-  body.sidebar-open {
-    overflow: hidden; /* Prevent scrolling when sidebar is open */
-  }
-}
-
 .main-content {
-  margin-left: 250px; Adjust margin according to sidebar width
+  margin-left: 250px; // Adjust margin according to sidebar width
   padding: 20px;
   transition: margin-left 0.3s ease-in-out; /* Smooth transition for content */
+  margin-bottom: 10px;
 }
 
 .main-content .header1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .main-content .header1 input {
@@ -153,6 +134,7 @@ body {
   width: -webkit-fill-available;
   border: 1px solid var(--border-color);
   border-radius: 5px;
+  margin-left: 10px;
 }
 
 .container .up,
@@ -237,8 +219,8 @@ body {
   width: 50%;
 }
 .graph-container {
-    width: full; /* Adjust as needed */
-    height: 90px; /* Adjust as needed */
+    width: auto;
+    height: 90px;
     position: relative;
     overflow: hidden; /* Hide overflowing parts of the curve */
 }
@@ -316,9 +298,23 @@ body {
 }
 
 @media (max-width: 500px) {
+    .up .image-section {
+        display: none;
+    }
   .up .right {
     font-size: 14px;
     flex-direction: column;
+  }
+  .up .right .sales-card {
+    width: 100%;
+  }
+  .up .right .sales-overview {
+    width: 100%;
+  }
+
+  .down .earning .flex, .down .earning .details, .down .support-tracker {
+    flex-direction: column;
+    align-items: start;
   }
 }
 
@@ -338,7 +334,6 @@ body {
   font-size: 14px;
 }
 .earning .flex {
-  justify-content: center;
   gap: 15px;
 }
 .total-earnings {
@@ -435,6 +430,7 @@ body {
   width: 100px;
 }
 
+
 .support-tracker {
   background-color: #fff;
   border-radius: 10px;
@@ -443,6 +439,7 @@ body {
   width: 50%;
   gap: 10px;
   font-size: 1rem;
+  justify-content: space-between;
 }
 .support-tracker .statTickets {
   margin-top: 25px;
@@ -490,4 +487,116 @@ body {
 .progress-text .label {
   font-size: 0.9em;
   color: #888;
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+      transform: translateX(-100%);
+      z-index: 99;
+    }
+  
+    .main-content {
+      margin-left: 0; /* Reset content margin */
+  }
+  
+    /* Styles for when sidebar is open */
+    .sidebar.active {
+      transform: translateX(0); /* Show sidebar */
+    }
+  
+    body.sidebar-open {
+      overflow: hidden; /* Prevent scrolling when sidebar is open */
+    }
+}
+
+@media screen and (max-width: 1024px) {
+.container .up {
+    flex-direction: column;
+}
+.container .up .analytics-card {
+    width: auto;
+}
+.container .up .right {
+    width: auto;
+}
+
+.container .down {
+    flex-direction: column;
+}
+.container .down .earning {
+    width: auto;
+}
+.container .down .support-tracker {
+    width: auto;
+}
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    z-index: 1000;
+    cursor: pointer;
+    border: none;
+}
+
+.close-btn {
+    display: none;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: white;
+    color: #2c3e50;
+    padding: 5px 10px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.close-btn:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(100%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+    .close-btn {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
 }

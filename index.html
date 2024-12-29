@@ -10,6 +10,7 @@
 
 <body>
     <div class="sidebar">
+        <div class="close-btn" id="closeBtn">✖</div>
         <div class="logo"> <img src="logo.png" alt="Logo"> <span>Vuexy</span> </div>
         <ul class="menu-item">
             <li><a href="#" class="active"><span class="icon">📊</span> Dashboards <span class="badge">5</span></a></li>
@@ -39,6 +40,7 @@
             <div class="profile">
                 <img src="https://via.placeholder.com/40" alt="Profile" style="border-radius: 50%;">
             </div>
+            <button class="hamburger-menu">☰</button>
         </div>
         <div class="container">
             <div class="up">
@@ -184,6 +186,29 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const closeBtn = document.getElementById('closeBtn');
+
+        hamburgerMenu.addEventListener('click', () => {
+            console.log('clicked');
+            if (sidebar.style.transform === 'translateX(0%)' || !sidebar.style.transform) {
+                // Hide the sidebar
+                sidebar.style.transform = 'translateX(-100%)';
+            } else {
+                // Show the sidebar
+                sidebar.style.transform = 'translateX(0%)';
+                hamburgerMenu.style.display = 'none';
+            }
+        });
+        closeBtn.addEventListener('click', () => {
+            sidebar.style.transform = 'translateX(-100%)';
+            hamburgerMenu.style.display = 'block';
+        });
+
+    </script>
 </body>
 
 </html>
