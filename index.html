@@ -21,11 +21,11 @@
                     <span class="arrow">▶</span>
                 </div>
                 <ul class="submenu" id="dashboards">
-                    <li class="submenu-item">Analytics</li>
-                    <li class="submenu-item">CRM</li>
-                    <li class="submenu-item">eCommerce</li>
-                    <li class="submenu-item">Logistics</li>
-                    <li class="submenu-item">Academy</li>
+                    <li class="submenu-item">○ Analytics</li>
+                    <li class="submenu-item">○ CRM</li>
+                    <li class="submenu-item">○ eCommerce</li>
+                    <li class="submenu-item">○ Logistics</li>
+                    <li class="submenu-item">○ Academy</li>
                 </ul>
             </li>
             <li class="menu-item dropdown">
@@ -34,8 +34,8 @@
                     <span class="arrow">▶</span>
                 </div>
                 <ul class="submenu" id="layouts">
-                    <li class="submenu-item">Layout 1</li>
-                    <li class="submenu-item">Layout 2</li>
+                    <li class="submenu-item">○ Layout 1</li>
+                    <li class="submenu-item">○ Layout 2</li>
                 </ul>
             </li>
             <li class="menu-item dropdown">
@@ -44,8 +44,8 @@
                     <span class="arrow">▶</span>
                 </div>
                 <ul class="submenu" id="frontPages">
-                    <li class="submenu-item">Front Page 1</li>
-                    <li class="submenu-item">Front Page 2</li>
+                    <li class="submenu-item">○ Front Page 1</li>
+                    <li class="submenu-item">○ Front Page 2</li>
                 </ul>
             </li>
 
@@ -62,8 +62,8 @@
                     <span class="arrow">▶</span>
                 </div>
                 <ul class="submenu" id="eCommerce">
-                    <li class="submenu-item">1</li>
-                    <li class="submenu-item">2</li>
+                    <li class="submenu-item">○ 1</li>
+                    <li class="submenu-item">○ 2</li>
                 </ul>
             </li>
             <li class="menu-item dropdown">
@@ -72,8 +72,8 @@
                     <span class="arrow">▶</span>
                 </div>
                 <ul class="submenu" id="academy">
-                    <li class="submenu-item">1</li>
-                    <li class="submenu-item">2</li>
+                    <li class="submenu-item">○ 1</li>
+                    <li class="submenu-item">○ 2</li>
                 </ul>
             </li>
             <li class="menu-item dropdown">
@@ -82,8 +82,8 @@
                     <span class="arrow">▶</span>
                 </div>
                 <ul class="submenu" id="logistics">
-                    <li class="submenu-item">1</li>
-                    <li class="submenu-item">2</li>
+                    <li class="submenu-item">○ 1</li>
+                    <li class="submenu-item">○ 2</li>
                 </ul>
             </li>
             <li class="menu-item dropdown">
@@ -92,8 +92,8 @@
                     <span class="arrow">▶</span>
                 </div>
                 <ul class="submenu" id="invoice">
-                    <li class="submenu-item">1</li>
-                    <li class="submenu-item">2</li>
+                    <li class="submenu-item">○ 1</li>
+                    <li class="submenu-item">○ 2</li>
                 </ul>
             </li>
         </ul>
@@ -155,8 +155,10 @@
                         <h3>Average Daily Sales</h3>
                         <h5>Total Sales This Month</h5>
                         <p>$28,450</p>
-                        <div class="graph-container">
-                            <div class="graph"></div>
+                        <div class="wave-container">
+                            <svg class="wave-svg" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 100 Q100 50 200 100 T400 100 V150 H0 Z" />
+                            </svg>
                         </div>
                     </div>
 
@@ -168,20 +170,38 @@
                             </div>
                             <div class="increase">+18.2%</div>
                         </div>
-                        <div class="details">
-                            <div class="order">
-                                <h3>Order</h3>
-                                <div class="percentage">62.2%</div>
-                                <div class="count">6,440</div>
+                        <div class="comparison-container">
+                            <div class="comparison-box">
+                                <div class="flex">
+                                    <div class="icon-wrapper">
+                                        <span class="icon">🛒</span>
+                                    </div>
+                                    <p class="label">Order</p>
+                                </div>
+                                <p class="percentage">62.2%</p>
+                                <p class="value">6,440</p>
                             </div>
-                            <div class="visits">
-                                <h3>Visits</h3>
-                                <div class="percentage">25.5%</div>
-                                <div class="count">12,749</div>
+
+                            <div class="vs-container">
+                                <div class="vs-line"></div>
+                                <div class="vs">
+                                    <span>vs</span>
+                                </div>
+                                <div class="vs-line"></div>
+                            </div>
+
+                            <div class="comparison-box">
+                                <div class="flex">
+                                    <p class="label">Visits</p>
+                                    <div class="icon-wrapper">
+                                        <span class="icon">🔗</span>
+                                    </div>
+                                </div>
+                                <p class="percentage">25.5%</p>
+                                <p class="value">12,749</p>
                             </div>
                         </div>
                         <div class="colorBar"></div>
-                        <div class="line"></div>
                     </div>
                 </div>
             </div>

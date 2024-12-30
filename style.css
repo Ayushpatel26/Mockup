@@ -27,7 +27,7 @@ body {
   align-items: center;
 }
 
-/* for sidebar */
+
 .sidebar {
   width: 20vw;
   height: 100vh;
@@ -50,7 +50,7 @@ body {
 
 .sidebar .logo img {
   width: 30px;
-  height: auto; /* Maintain aspect ratio */
+  height: auto;
   margin-right: 10px;
 }
 
@@ -98,17 +98,22 @@ body {
 }
 
 .submenu {
-  padding-left: 30px;
+  list-style: none;
+  padding-left: 5px;
   display: none;
 }
 
 .submenu-item {
-  padding: 5px 0;
+  margin: 10px 0;
+  padding: 10px;
   color: #555;
+  font-size: 14px;
+  border-radius: 8px;
 }
 
 .submenu-item:hover {
-  color: #333;
+  color: white;
+  background: #6c5dd3;
 }
 
 
@@ -202,6 +207,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 50%;
+  height: auto;
 }
 
 .analytics-card h3 {
@@ -257,29 +263,13 @@ body {
   width: 50%;
   height: 100%;
 }
-.graph-container {
-    width: auto;
-    height: 90px;
-    position: relative;
-    overflow: hidden; /* Hide overflowing parts of the curve */
+/* for graph */
+.wave-svg {
+  width: 100%;
+  height: 100%;
 }
-.graph {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(0, 128, 0, 0.2)); /* Gradient fill */
-    position: absolute; /* Needed for curve positioning */
-    bottom: 0; /* Align to the bottom */
-    clip-path: path("M 0 75 C 50 50, 100 25, 150 50 C 200 75, 250 125, 300 100 L 300 150 L 0 150 Z"); /* SVG Path for the curve */
-}
-/*For Graph only*/
-@media (max-width:400px){
-    .graph-container{
-        width: 200px;
-        height: 100px;
-    }
-    .graph{
-        clip-path: path("M 0 50 C 33.33 33.33, 66.66 16.66, 100 33.33 C 133.33 50, 166.66 83.33, 200 66.66 L 200 100 L 0 100 Z");
-    }
+.wave-svg path {
+  fill: rgba(34, 197, 94, 0.15);
 }
 
 
@@ -290,6 +280,10 @@ body {
   padding: 10px;
   position: relative;
   width: 50%;
+}
+.sales-overview .flex {
+  align-items: normal;
+  justify-content: space-between;
 }
 .sales-overview h2 {
   margin: 0;
@@ -303,37 +297,95 @@ body {
   color: green;
   font-size: 1em;
 }
-.sales-overview .details {
+
+.comparison-container {
   display: flex;
-  justify-content: space-around;
-  margin: 20px 0;
+  align-items: center;
+  padding: 20px 10px;
+  justify-content: space-between;
 }
-.sales-overview .details div {
-  width: 45%;
+
+.comparison-box {
+  text-align: center;
 }
-.sales-overview .details div h3 {
-  margin: 0;
-  font-size: 1em;
-  color: #888;
+
+.comparison-box .flex {
+  align-items: center;
+  gap: 3px;
 }
-.sales-overview .details div .percentage {
-  font-size: 1.2em;
+
+.icon-wrapper {
+  background-color: rgba(0, 190, 255, 0.1); /* Light cyan for "Order" */
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px auto;
+}
+
+.comparison-box:nth-child(3) .icon-wrapper {
+  background-color: rgba(174, 144, 255, 0.1); /* Light purple for "Visits" */
+}
+
+.icon {
+  font-size: 20px;
+  color: #00baff; /* Icon color for "Order" */
+}
+
+.comparison-box:nth-child(3) .icon {
+  color: #ae90ff; /* Icon color for "Visits" */
+}
+
+.label {
+  color: #888888;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.percentage {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.value {
+  color: #bbbbbb;
+  font-size: 12px;
+}
+
+.vs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.vs-line {
+  width: 1px;
+  height: 20px;
+  background-color: #dddddd;
+}
+
+.vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  font-size: 12px;
+  color: #888888;
+  font-weight: bold;
   margin: 5px 0;
 }
-.sales-overview .details div .count {
-  color: #888;
-}
+
 .colorBar {
   height: 10px;
   background: linear-gradient(to right, #00bcd4 62.2%, #9c27b0 62.2%);
   border-radius: 5px;
-}
-.sales-overview .line {
-  height: 70px;
-  position: absolute;
-  left: 45%;
-  top: 45%;
-  border: 0.3px solid gray;
 }
 
 .earning {
@@ -533,7 +585,7 @@ body {
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1215px) {
 .container .up {
     flex-direction: column;
 }
