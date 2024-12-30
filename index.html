@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Mockup</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,35 +12,109 @@
     <div class="sidebar">
         <div class="close-btn" id="closeBtn">✖</div>
         <div class="logo"> <img src="logo.png" alt="Logo"> <span>Vuexy</span> </div>
-        <ul class="menu-item">
-            <li><a href="#" class="active"><span class="icon">📊</span> Dashboards <span class="badge">5</span></a></li>
-            <li><a href="#"><span class="icon">📈</span> Analytics</a></li>
-            <li><a href="#"><span class="icon">📋</span> CRM</a></li>
-            <li><a href="#"><span class="icon">🛒</span> eCommerce</a></li>
-            <li><a href="#"><span class="icon">🚚</span> Logistics</a></li>
-            <li><a href="#"><span class="icon">🎓</span> Academy</a></li>
-            <li><a href="#"><span class="icon">📄</span> Layouts</a></li>
-            <li><a href="#"><span class="icon">📄</span> Front Pages</a></li>
-        </ul>
-        <h3>APPS & PAGES</h3>
-        <ul class="menu-item">
-            <li><a href="#"><span class="icon">✉️</span> Email</a></li>
-            <li><a href="#"><span class="icon">💬</span> Chat</a></li>
-            <li><a href="#"><span class="icon">📅</span> Calendar</a></li>
-            <li><a href="#"><span class="icon">📊</span> Kanban</a></li>
-            <li><a href="#"><span class="icon">🛒</span> eCommerce</a></li>
-            <li><a href="#"><span class="icon">🎓</span> Academy</a></li>
-            <li><a href="#"><span class="icon">🚚</span> Logistics</a></li>
-            <li><a href="#"><span class="icon">📄</span> Invoice</a></li>
+
+        <ul class="menu">
+            <li class="menu-item dropdown">
+                <div class="menu-link" onclick="toggleDropdown('dashboards')">
+                    <span>📊 Dashboards</span>
+                    <span class="badge">5</span>
+                    <span class="arrow">▶</span>
+                </div>
+                <ul class="submenu" id="dashboards">
+                    <li class="submenu-item">Analytics</li>
+                    <li class="submenu-item">CRM</li>
+                    <li class="submenu-item">eCommerce</li>
+                    <li class="submenu-item">Logistics</li>
+                    <li class="submenu-item">Academy</li>
+                </ul>
+            </li>
+            <li class="menu-item dropdown">
+                <div class="menu-link" onclick="toggleDropdown('layouts')">
+                    <span>📄 Layouts</span>
+                    <span class="arrow">▶</span>
+                </div>
+                <ul class="submenu" id="layouts">
+                    <li class="submenu-item">Layout 1</li>
+                    <li class="submenu-item">Layout 2</li>
+                </ul>
+            </li>
+            <li class="menu-item dropdown">
+                <div class="menu-link" onclick="toggleDropdown('frontPages')">
+                    <span>📄 Front Pages</span>
+                    <span class="arrow">▶</span>
+                </div>
+                <ul class="submenu" id="frontPages">
+                    <li class="submenu-item">Front Page 1</li>
+                    <li class="submenu-item">Front Page 2</li>
+                </ul>
+            </li>
+
+            <li class="menu-item">APPS & PAGES</li>
+
+            <li class="menu-item">📧 Email</li>
+            <li class="menu-item">💬 Chat</li>
+            <li class="menu-item">📅 Calendar</li>
+            <li class="menu-item">🗂️ Kanban</li>
+
+            <li class="menu-item dropdown">
+                <div class="menu-link" onclick="toggleDropdown('eCommerce')">
+                    <span>🛒 eCommerce</span>
+                    <span class="arrow">▶</span>
+                </div>
+                <ul class="submenu" id="eCommerce">
+                    <li class="submenu-item">1</li>
+                    <li class="submenu-item">2</li>
+                </ul>
+            </li>
+            <li class="menu-item dropdown">
+                <div class="menu-link" onclick="toggleDropdown('academy')">
+                    <span>🎓 Academy</span>
+                    <span class="arrow">▶</span>
+                </div>
+                <ul class="submenu" id="academy">
+                    <li class="submenu-item">1</li>
+                    <li class="submenu-item">2</li>
+                </ul>
+            </li>
+            <li class="menu-item dropdown">
+                <div class="menu-link" onclick="toggleDropdown('logistics')">
+                    <span>🚚 Logistics</span>
+                    <span class="arrow">▶</span>
+                </div>
+                <ul class="submenu" id="logistics">
+                    <li class="submenu-item">1</li>
+                    <li class="submenu-item">2</li>
+                </ul>
+            </li>
+            <li class="menu-item dropdown">
+                <div class="menu-link" onclick="toggleDropdown('invoice')">
+                    <span>📜 Invoice</span>
+                    <span class="arrow">▶</span>
+                </div>
+                <ul class="submenu" id="invoice">
+                    <li class="submenu-item">1</li>
+                    <li class="submenu-item">2</li>
+                </ul>
+            </li>
         </ul>
     </div>
     <div class="main-content">
         <div class="header1">
-            <input type="text" placeholder="Search (Ctrl+/)">
-            <div class="profile">
-                <img src="https://via.placeholder.com/40" alt="Profile" style="border-radius: 50%;">
-            </div>
             <button class="hamburger-menu">☰</button>
+            <div class="search-bar">
+                <div class="search-input">
+                    <span class="icon">🔍</span>
+                    <input type="text" placeholder="Search (Ctrl+/)">
+                </div>
+                <div class="icons">
+                    <span class="icon">🌐</span>
+                    <span class="icon">🌞</span>
+                    <span class="icon">➕</span>
+                    <span class="icon">🔔</span>
+                    <img src="https://via.placeholder.com/30" alt="Profile" class="profile-pic"
+                        style="border-radius: 50%;">
+                </div>
+            </div>
         </div>
         <div class="container">
             <div class="up">
@@ -207,7 +281,21 @@
             sidebar.style.transform = 'translateX(-100%)';
             hamburgerMenu.style.display = 'block';
         });
+    </script>
+    <script>
+        function toggleDropdown(menuId) {
+            const menu = document.getElementById(menuId);
+            const arrow = menu.previousElementSibling.querySelector('.arrow');
 
+            // Toggle the visibility of the submenu
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+                arrow.textContent = '▶'; // Change arrow to collapsed
+            } else {
+                menu.style.display = 'block';
+                arrow.textContent = '▼'; // Change arrow to expanded
+            }
+        }
     </script>
 </body>
 

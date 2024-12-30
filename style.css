@@ -18,9 +18,6 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
   height: 100vh;
 }
 
@@ -30,112 +27,152 @@ body {
   align-items: center;
 }
 
+/* for sidebar */
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: #fff;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto; /* Add scroll if content overflows */
-    position: fixed; /* or sticky, depending on layout */
-    top: 0;
-    left: 0;
-    z-index: 100; /* Ensure it's above other content if needed */
+  width: 20vw;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .sidebar .logo {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .sidebar .logo img {
-    width: 30px;
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px;
+  width: 30px;
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px;
 }
 
 .sidebar .logo span {
-    font-size: 1.25rem; /* Use rem for better scaling */
+    font-size: 1.25rem;
     font-weight: bold;
 }
 
-.sidebar .menu-item {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.menu {
+  list-style: none;
 }
 
-.sidebar .menu-item li {
-    margin-bottom: 0.5rem; /* Use rem for consistent spacing */
+.menu-item {
+  margin: 10px 0;
+  cursor: pointer;
 }
 
-.sidebar .menu-item li a {
-    text-decoration: none;
-    color: #333;
-    display: flex;
-    align-items: center;
-    padding: 0.75rem 1rem; /* Use rem for padding */
-    border-radius: 5px;
-    transition: background-color 0.3s ease; /* Add transition easing */
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden; /* Hide overflowing text */
-    text-overflow: ellipsis; /* Add ellipsis for long text */
+.menu-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f7f7f8;
+  color: #333;
+  transition: background-color 0.3s;
 }
 
-.sidebar .menu-item li a:hover,
-.sidebar .menu-item li a.active {
-    background-color: #f0f0f0; /* Slightly lighter gray for hover */
+.menu-link:hover {
+  background-color: #eaeaea;
 }
 
-.sidebar .menu-item li a .badge {
-    background-color: red;
-    color: #fff;
-    border-radius: 50%;
-    padding: 0.25rem 0.5rem; /* Use rem for padding */
-    font-size: 0.75rem; /* Use rem for font size */
-    margin-left: auto;
-    flex-shrink: 0; /* Prevent badge from shrinking */
+.badge {
+  background-color: #ff4d4f;
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 12px;
 }
 
-.sidebar .menu-item li a .icon {
-    margin-right: 0.5rem; /* Use rem for consistent spacing */
-    width: 1.25rem; /* Set a fixed width for icons for consistent spacing */
-    height: 1.25rem; /* Set a fixed height for icons */
-    display: flex; /* Use flexbox for icon alignment */
-    align-items: center;
-    justify-content: center;
+.arrow {
+  font-size: 12px;
+  margin-left: 5px;
 }
 
-/* Optional: Style the icons */
-.sidebar .menu-item li a .icon svg,
-.sidebar .menu-item li a .icon i { /* For Font Awesome or similar */
-    width: 100%;
-    height: 100%;
+.submenu {
+  padding-left: 30px;
+  display: none;
 }
+
+.submenu-item {
+  padding: 5px 0;
+  color: #555;
+}
+
+.submenu-item:hover {
+  color: #333;
+}
+
 
 .main-content {
-  margin-left: 250px; // Adjust margin according to sidebar width
+  margin-left: 20vw;
   padding: 20px;
-  transition: margin-left 0.3s ease-in-out; /* Smooth transition for content */
+  transition: margin-left 0.3s ease-in-out;
   margin-bottom: 10px;
 }
 
 .main-content .header1 {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
 }
 
-.main-content .header1 input {
-  padding: 10px;
-  width: -webkit-fill-available;
-  border: 1px solid var(--border-color);
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
   border-radius: 5px;
-  margin-left: 10px;
+  padding: 0 10px;
+  width: 100%;
+  height: 48px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+
+.search-input {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.search-input .icon {
+  font-size: 16px;
+  margin-right: 10px;
+}
+.search-input input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+}
+.search-input input::placeholder {
+  color: #9e9e9e;
+}
+
+.header1 .icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.header1 .icons .icon {
+  font-size: 15px;
+  cursor: pointer;
+}
+.header1 .icons .profile-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
 
 .container .up,
 .container .down {
@@ -214,9 +251,11 @@ body {
 
 .up .right {
   align-items: self-start;
-}
-.up .right .sales-card {
   width: 50%;
+}
+.up .right .sales-card, .up .right .sales-overview {
+  width: 50%;
+  height: 100%;
 }
 .graph-container {
     width: auto;
@@ -232,7 +271,7 @@ body {
     bottom: 0; /* Align to the bottom */
     clip-path: path("M 0 75 C 50 50, 100 25, 150 50 C 200 75, 250 125, 300 100 L 300 150 L 0 150 Z"); /* SVG Path for the curve */
 }
-/*Responsive behavior*/
+/*For Graph only*/
 @media (max-width:400px){
     .graph-container{
         width: 200px;
@@ -297,27 +336,6 @@ body {
   border: 0.3px solid gray;
 }
 
-@media (max-width: 500px) {
-    .up .image-section {
-        display: none;
-    }
-  .up .right {
-    font-size: 14px;
-    flex-direction: column;
-  }
-  .up .right .sales-card {
-    width: 100%;
-  }
-  .up .right .sales-overview {
-    width: 100%;
-  }
-
-  .down .earning .flex, .down .earning .details, .down .support-tracker {
-    flex-direction: column;
-    align-items: start;
-  }
-}
-
 .earning {
   background-color: #fff;
   border-radius: 10px;
@@ -345,8 +363,6 @@ body {
   font-weight: bold;
 }
 .percentage {
-  background-color: #e0f7e9;
-  color: #34a853;
   border-radius: 5px;
   padding: 2px 5px;
   margin-left: 10px;
@@ -482,7 +498,6 @@ body {
 }
 .progress-text .percentage {
   font-size: 2em;
-  font-weight: bold;
 }
 .progress-text .label {
   font-size: 0.9em;
@@ -490,6 +505,15 @@ body {
 }
 
 @media screen and (max-width: 700px) {
+  .up .right {
+    font-size: 14px;
+    flex-direction: column;
+    width: 100%;
+  }
+  .up .right .sales-card, .up .right .sales-overview{
+    width: 100%;
+  }
+  
     .sidebar {
       transform: translateX(-100%);
       z-index: 99;
@@ -505,7 +529,7 @@ body {
     }
   
     body.sidebar-open {
-      overflow: hidden; /* Prevent scrolling when sidebar is open */
+      overflow: hidden;
     }
 }
 
@@ -517,7 +541,7 @@ body {
     width: auto;
 }
 .container .up .right {
-    width: auto;
+    width: 100%;
 }
 
 .container .down {
@@ -532,24 +556,17 @@ body {
 }
 
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    transition: transform 0.3s ease-in-out;
-    overflow-y: auto;
+  width: 250px;
+  position: fixed;
+  transition: transform 0.3s ease-in-out;
 }
 
 .hamburger-menu {
     display: none;
-    font-size: 24px;
-    position: absolute;
-    top: 15px;
-    left: 5px;
-    z-index: 1000;
+    font-size: 25px;
     cursor: pointer;
     border: none;
+    margin: 5px;
 }
 
 .close-btn {
@@ -592,6 +609,7 @@ body {
     .hamburger-menu {
         display: block;
     }
+
     .close-btn {
         display: block;
     }
@@ -599,4 +617,26 @@ body {
     .main-content {
         margin-left: 0;
     }
+}
+
+@media (max-width: 500px) {
+  .up .image-section {
+      display: none;
+  }
+  .up .right {
+    font-size: 14px;
+    flex-direction: column;
+    width: 100%;
+  }
+  .up .right .sales-card {
+    width: 100%;
+  }
+  .up .right .sales-overview {
+    width: 100%;
+  }
+
+  .down .earning .flex, .down .earning .details, .down .support-tracker {
+    flex-direction: column;
+    align-items: start;
+  }
 }
